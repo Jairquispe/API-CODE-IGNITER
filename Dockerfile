@@ -19,3 +19,6 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 80
 
 CMD ["apache2-foreground"]
+
+# Establecer permisos en el directorio writable
+RUN chown -R www-data:www-data /var/www/html/writable && chmod -R 0777 /var/www/html/writable
