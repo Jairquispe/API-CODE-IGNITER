@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'bd_vigil_api',
+        'hostname'     => 'https://php-myadmin.net/db_structure.php?db=if0_37749849_bd_vigil_api',
+        'username'     => 'if0_37749849',
+        'password'     => 'jairproductos',
+        'database'     => 'if0_37749849_XXX',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
