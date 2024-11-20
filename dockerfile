@@ -18,3 +18,14 @@ EXPOSE 8000
 
 # Comando para iniciar la aplicación
 CMD ["php", "-S", "0.0.0.0:8000", "-t", "public"]
+
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    && docker-php-ext-install \
+    mbstring \
+    intl \
+    zip
+
