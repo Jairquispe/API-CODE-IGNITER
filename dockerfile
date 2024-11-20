@@ -1,31 +1,28 @@
-# Usa una imagen base con PHP y Composer ya instalados
+# Usa una imagen base con PHP y Composer
 FROM php:8.1-cli
 
-# Instala Composer manualmente si no está disponible
+# Instala dependencias del sistema
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    libonig-dev \
+    libxml2-dev \
+    && docker-php-ext-install \
+    mbstring \
+    zip \
+    intl
+
+# Instala Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Copia los archivos del proyecto al contenedor
 COPY . /var/www/html
-
-# Define el directorio de trabajo
 WORKDIR /var/www/html
 
 # Ejecuta Composer para instalar dependencias
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --verbose
 
-# Expone el puerto 8000 para desarrollo (si aplica)
+# Exponer el puerto (si aplica)
 EXPOSE 8000
 
-# Comando para iniciar la aplicación
+# Comando de inicio
 CMD ["php", "-S", "0.0.0.0:8000", "-t", "."]
-
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libzip-dev \
-    && docker-php-ext-install \
-    mbstring \
-    intl \
-    zip
-
