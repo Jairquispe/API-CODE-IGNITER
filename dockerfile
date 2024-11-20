@@ -17,7 +17,7 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 8000
 
 # Comando para iniciar la aplicación
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "public"]
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "."]
 
 RUN apt-get update && apt-get install -y \
     libpng-dev \
