@@ -7,4 +7,11 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-$routes->get('/apiproducto/listar','RestProducto::listar_productos');
+// Rutas para el controlador RestProducto
+$routes->get('/producto/listar', 'RestProducto::listar_productos');
+$routes->get('/producto/(:num)', 'RestProducto::cargar_info_producto/$1'); // Obtener un producto por ID
+$routes->post('/producto/insertar', 'RestProducto::insertar_producto'); // Insertar producto
+$routes->put('/producto/modificar/(:num)', 'RestProducto::modificar_producto/$1'); // Modificar producto
+$routes->delete('/producto/eliminar/(:num)', 'RestProducto::eliminar_producto/$1'); // Eliminar producto
+
+?>
