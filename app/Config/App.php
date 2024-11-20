@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'https://github.com/Jairquispe/API-CODE-IGNITER';
+    public string $baseURL = 'https://github.com/Jairquispe/API-CODE-IGNITER.git';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
