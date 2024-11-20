@@ -29,7 +29,7 @@ class Database extends Config
         'hostname'     => 'https://php-myadmin.net/db_structure.php?db=if0_37749849_bd_vigil_api',
         'username'     => 'if0_37749849',
         'password'     => 'jairproductos',
-        'database'     => 'if0_37749849_XXX',
+        'database'     => 'if0_37749849_bd_vigil_api',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
