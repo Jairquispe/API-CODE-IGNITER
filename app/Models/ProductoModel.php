@@ -107,7 +107,7 @@ class ProductoModel extends Model
                     descripcion = '$descripcion',
                     precio = $precio,
                     stock = $stock,
-                    codigo_barras = '$codigo_barras'
+                    codigo_barras = '$codigo_barras',
                     fecha_modifica = '$fecha_modifica'
                 WHERE 
                     id_producto = $IdProducto
