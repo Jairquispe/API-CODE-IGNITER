@@ -95,7 +95,7 @@ class ProductoModel extends Model
         ];
     }
 
-    public function modificar_producto($IdProducto, $nom_producto, $descripcion, $precio, $stock, $codigo_barras)
+    public function modificar_producto($IdProducto, $nom_producto, $descripcion, $precio, $stock, $codigo_barras,$fecha_modifica)
     {
         $mensaje = "Error al actualizar los datos.";
         $resultado = false;
@@ -108,6 +108,7 @@ class ProductoModel extends Model
                     precio = $precio,
                     stock = $stock,
                     codigo_barras = '$codigo_barras'
+                    fecha_modifica = '$fecha_modifica'
                 WHERE 
                     id_producto = $IdProducto
             ";
