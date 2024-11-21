@@ -9,20 +9,12 @@ class RestProducto extends ResourceController
     protected $modelName = "App\Models\ProductoModel";
     protected $format = "json";
 
-
-        // Constructor explícito para cargar el modelo
-    public function __construct()
-    {
-        $this->model = new ProductoModel(); // Inicializa el modelo explícitamente
-    }
-
     /**
      * Listar todos los productos
      */
     public function listar_productos()
     {
-        $productoModel = new ProductoModel(); // Crear instancia del modelo
-        $productos = $productoModel->listar_productos(); // Llamar a la función
+        $productos = $this->model->listar_productos();
         return $this->respond($productos);
     }
 
