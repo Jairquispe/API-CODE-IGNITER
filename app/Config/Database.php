@@ -24,31 +24,31 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-        public array $default = [
-            'DSN'          => '',
-            'hostname'     => 'https://php-myadmin.net/db_structure.php', // Host MySQL correcto
-            'username'     => 'if0_37749849',           // Nombre de usuario
-            'password'     => 'jairproductos',          // Contraseña
-            'database'     => 'if0_37749849_bd_vigil_api', // Nombre de la base de datos
-            'DBDriver'     => 'MySQLi',
-            'DBPrefix'     => '',
-            'pConnect'     => false,
-            'DBDebug'      => true,
-            'charset'      => 'utf8mb4',                // Charset para UTF-8
-            'DBCollat'     => 'utf8mb4_general_ci',     // Colación para UTF-8
-            'swapPre'      => '',
-            'encrypt'      => false,
-            'compress'     => false,
-            'strictOn'     => false,
-            'failover'     => [],
-            'port'         => 3306,                     // Puerto MySQL
-            'numberNative' => false,
-            'dateFormat'   => [
-                'date'     => 'Y-m-d',
-                'datetime' => 'Y-m-d H:i:s',
-                'time'     => 'H:i:s',
-            ],
-        ];
+    public array $default = [
+        'DSN'          => '',
+        'hostname'     => 'sql309.infinityfree.com',
+        'username'     => 'if0_37749849',
+        'password'     => 'jairproductos',
+        'database'     => 'if0_37749849_bd_vigil_api',
+        'DBDriver'     => 'MySQLi',
+        'DBPrefix'     => '',
+        'pConnect'     => false,
+        'DBDebug'      => true,
+        'charset'      => 'utf8mb4',
+        'DBCollat'     => 'utf8mb4_general_ci',
+        'swapPre'      => '',
+        'encrypt'      => false,
+        'compress'     => false,
+        'strictOn'     => false,
+        'failover'     => [],
+        'port'         => 3306,
+        'numberNative' => false,
+        'dateFormat'   => [
+            'date'     => 'Y-m-d',
+            'datetime' => 'Y-m-d H:i:s',
+            'time'     => 'H:i:s',
+        ],
+    ];
 
 
     //    /**
