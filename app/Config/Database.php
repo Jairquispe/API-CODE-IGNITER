@@ -26,7 +26,7 @@ class Database extends Config
      */
         public array $default = [
             'DSN'          => '',
-            'hostname'     => 'sql309.infinityfree.com', // Host MySQL correcto
+            'hostname'     => 'https://php-myadmin.net/db_structure.php', // Host MySQL correcto
             'username'     => 'if0_37749849',           // Nombre de usuario
             'password'     => 'jairproductos',          // Contraseña
             'database'     => 'if0_37749849_bd_vigil_api', // Nombre de la base de datos
