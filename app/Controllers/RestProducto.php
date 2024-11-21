@@ -80,7 +80,7 @@ class RestProducto extends ResourceController
         $data = $this->request->getJSON(true); // Usamos true para convertirlo a un array asociativo
 
         // Validar si el ID y los campos obligatorios están presentes
-        if ($idProducto === null || !isset($data['nom_producto'], $data['descripcion'], $data['precio'], $data['stock'], $data['codigo_barras'])) {
+        if ($idProducto === null || !isset($data['nom_producto'], $data['descripcion'], $data['precio'], $data['stock'], $data['codigo_barras'],$data['fecha_modifica'])) {
             return $this->failValidationError("Todos los campos y el ID del producto son obligatorios.");
         }
 
@@ -91,7 +91,8 @@ class RestProducto extends ResourceController
             $data['descripcion'],
             $data['precio'],
             $data['stock'],
-            $data['codigo_barras']
+            $data['codigo_barras'],
+            $data['fecha_modifica']
         );
 
         if ($resultado['result']) {
