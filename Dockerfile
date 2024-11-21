@@ -2,8 +2,10 @@ FROM php:8.1-apache
 
 # Instalar dependencias necesarias
 RUN apt-get update && apt-get install -y \
-    zip unzip libicu-dev libzip-dev git curl libmysqli-dev \
-    && docker-php-ext-install intl pdo_mysql zip mysqli
+    zip unzip libicu-dev libzip-dev git curl \
+    && apt-get install -y libmariadb-dev-compat libmariadb-dev \
+    && docker-php-ext-install intl pdo_mysql zip mysqli \
+    || { echo 'Error: Installation failed!'; exit 1; }
 
 # Instalar Composer
 COPY --from=composer:2.8 /usr/bin/composer /usr/bin/composer
@@ -22,3 +24,4 @@ CMD ["apache2-foreground"]
 
 # Establecer permisos en el directorio writable
 RUN chown -R www-data:www-data /var/www/html/writable && chmod -R 0777 /var/www/html/writable
+
