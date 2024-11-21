@@ -16,7 +16,7 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Exponer el puerto 80
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["apache2-foreground"]
 
